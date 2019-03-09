@@ -26,3 +26,6 @@ Functional tests should help you build an application with the right functionali
  and guarantee you never accidentally break it.
  Unit tests should help you to write code that’s clean and bug free.
 =======================================================================================
+
+
+On refactoring.
