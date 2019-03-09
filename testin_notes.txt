@@ -1,0 +1,32 @@
+::::::::::::::::::Unit testing::::::::::::::
+unit testing doc: https://docs.python.org/3.6/library/unittest.html
+assert list:  https://docs.python.org/3.6/library/unittest.html#assert-methods
+
+test case: unittest provides a base class TestCase, which may be used to create new test cases
+test suite: collection of test cases, test suites or both.
+test runner: this component orchestrates the execution of tests and provides the outcome to user.
+
+-> A testcase is created by subclassing unittest.TestCase. naming convention used is test_<method_name> to inform test runner
+
+-> setUp()   &   tearDown()
+
+
+-> to run the test :    unittest.main()
+
+========================enough for now =====================
+
+
+========= assert method list =======================
+
+assertEqual(a,b)
+assertNotEqual(a,b)
+assertTrue(x)
+assertFalse(x)
+assertIs(a, b)
+assertIsNot(a, b)
+assertIsNone(x)
+assertIsNotNone(x)
+assertIn(a,b)
+assertNotIn(a,b)
+assertIsInstance(a, b)
+assertNotIsInstance(a, b)
