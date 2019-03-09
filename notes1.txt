@@ -36,3 +36,16 @@ TDD PROCESS:
 * Unit test
 * The unit-test/code cycle
 * Refactoring
+
+
+====================================================================================
+
+Red / Green / Refactor and Triangulation
+
+unit-test code cycle:
+* writing unit test                 ---> RED
+* Writing simplest possible code    ---> GREEN
+* writing better code               ---> Refactor
+
+            Triangulation : writing another test to force yourself to write a better code.
+=========================================================================================
