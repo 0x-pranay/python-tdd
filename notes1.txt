@@ -49,3 +49,6 @@ unit-test code cycle:
 
             Triangulation : writing another test to force yourself to write a better code.
 =========================================================================================
+
+To run functional tests:    python manage.py test functiona_tests/
+To run unit tests:    python manage.py test lists/
