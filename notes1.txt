@@ -52,3 +52,7 @@ unit-test code cycle:
 
 To run functional tests:    python manage.py test functiona_tests/
 To run unit tests:    python manage.py test lists/
+
+# using grep to view class names and fucntional names:
+$ grep -E "class|def" lists/tests.py
+ 

@@ -30,3 +30,7 @@ assertIn(a,b)
 assertNotIn(a,b)
 assertIsInstance(a, b)
 assertNotIsInstance(a, b)
+
+
+self.assertContains(response, 'itemey 1')  ---> Instead of assertIn('Itemey 1',response.content.decode())
+# Django knows how to deal with responses and the bytes of their content.
