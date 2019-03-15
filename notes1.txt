@@ -59,3 +59,15 @@ $ grep -E "class|def" lists/tests.py
 ===================================================================
 reverse lookup : (Djangos incredibly useful bit of ORM)
 https://docs.djangoproject.com/en/1.11/topics/db/queries/#following-relationships-backward
+
+====================================================================
+customizing bootstrap: https://www.smashingmagazine.com/2013/03/customizing-bootstrap/
+
+
+=====================================================================================
+A guide to css flex box:
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background
+
+customizing bootstrap with less etc,:
+https://www.smashingmagazine.com/2013/03/customizing-bootstrap/
+===========================================================================
