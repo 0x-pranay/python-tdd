@@ -34,3 +34,5 @@ assertNotIsInstance(a, b)
 
 self.assertContains(response, 'itemey 1')  ---> Instead of assertIn('Itemey 1',response.content.decode())
 # Django knows how to deal with responses and the bytes of their content.
+
+response.context => represent the context we're going to pass into the render function - The Django Test client putsl it on the respone object for us, to help with testing.
