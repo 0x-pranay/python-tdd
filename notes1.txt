@@ -71,3 +71,9 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background
 customizing bootstrap with less etc,:
 https://www.smashingmagazine.com/2013/03/customizing-bootstrap/
 ===========================================================================
+
+
+            ::ON DEBUGGING::
+    If at first you don’t succeed, you need to systematically rule out options, check your assumptions, eliminate various aspects of the problem and simplify things down, find the parts that do and don’t work, until you eventually find the cause.
+
+==================================================================
