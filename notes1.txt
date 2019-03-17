@@ -79,3 +79,4 @@ https://www.smashingmagazine.com/2013/03/customizing-bootstrap/
 ==================================================================
 https://help.pythonanywhere.com/pages/Virtualenvs
 ===================================================================
+TO deliberately skip a test : use ""@skip" decorator from "unittest" above that function(test function)
