@@ -13,19 +13,41 @@
 
     <body>
         <div class="container">
+
             <nav class="navbar navbar-default" role="navigation">
               <div class="container-fluid">
                 <a class="navbar-brand" href="/">Superlists</a>
-                <form class="navbar-form navbar-right" method="POST" action="#">
-                  <span>Enter email to log in:</span>
-                  <input type="text" class="form-control" name="email" type="text" />
-                  {% csrf_token %}
-                </form>
+                {% if user.email %}
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="navbar-text">Logged in as {{ user.email }}</li>
+                    <li><a href="#">Log out</a></li>
+                  </ul>
+                {% else %}
+                  <form class="navbar-form navbar-right" method="POST" action="{% url 'send_login_email' %}">
+                    <span>Enter email to log in:</span>
+                    <input class="form-control" name="email" type="text" />
+                    {% csrf_token %}
+                  </form>
+                {% endif %}
               </div>
             </nav>
 
+            {% if messages %}
+              <div class="row">
+                <div class="col-md-8">
+                  {% for message in messages %}
+                    {% if message.level_tag == 'success' %}
+                      <div class="alert alert-success">{{ message}}</div>
+                    {% else %}
+                      <div class="alert alert-warning">{{ message }}</div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+
             <div class="row">
-                <div class="col-md-6 offset-md-3 jumbotron">
+                <div class="col-md-6 offset-3 jumbotron">
                     <div class="text-center">
                         <h1>{% block header_text %}{% endblock %}</h1>
                         <form method="POST" action="{% block form_action %}{% endblock %}">
@@ -42,12 +64,14 @@
             </div>
 
             <div class="row">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-md-6 offset-3">
                     {% block table %}
                     {% endblock %}
                 </div>
             </div>
+
         </div>
+
         <script src="/static/jquery-3.4.0.min.js"></script>
         <script src="/static/list.js"></script>
         <script type="text/javascript">
