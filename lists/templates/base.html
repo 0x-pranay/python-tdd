@@ -18,6 +18,10 @@
               <div class="container-fluid">
                 <a class="navbar-brand" href="/">Superlists</a>
                 {% if user.email %}
+                  <ul class="nav navbar-nav navbar-left">
+                      <li><a href="{% url 'my_lists user.email'}">My lists</a></li>
+                  </ul>
+
                   <ul class="nav navbar-nav navbar-right">
                     <li class="navbar-text">Logged in as {{ user.email }}</li>
                     <li><a href="{% url 'logout' %}">Log out</a></li>
@@ -47,9 +51,10 @@
             {% endif %}
 
             <div class="row">
-                <div class="col-md-6 offset-3 jumbotron">
+                <div class="col-md-6 col-md-offset-3 jumbotron">
                     <div class="text-center">
                         <h1>{% block header_text %}{% endblock %}</h1>
+                        {% block list_form %}
                         <form method="POST" action="{% block form_action %}{% endblock %}">
                             {{ form.text }}
                             {% csrf_token %}
@@ -59,18 +64,26 @@
                             </div>
                             {% endif %}
                         </form>
+                        {% endblock %}
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-6 offset-3">
+                <div class="col-md-6 col-md-offset-3">
                     {% block table %}
                     {% endblock %}
                 </div>
             </div>
 
-        </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    {% block extra_content %}
+                    {% endblock %}
+                </div>
+            </div>
+
+        </div> <!-- container ends --->
 
         <script src="/static/jquery-3.4.0.min.js"></script>
         <script src="/static/list.js"></script>

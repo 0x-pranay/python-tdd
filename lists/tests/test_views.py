@@ -104,8 +104,8 @@ class ListViewTest(TestCase):
         list1 = List.objects.create()
         item1 = Item.objects.create(list=list1, text='textey')
         response = self.client.post(
-        f'/lists/{list1.id}/',
-        data = {'text': 'textey'}
+            ('/lists/{}/').format(list1.id),
+            data={'text': 'textey'}
         )
         expected_error = escape(DUPLICATE_ITEM_ERROR)
         self.assertContains(response, expected_error)
@@ -151,3 +151,10 @@ class NewListTest(TestCase):
     def test_for_invalid_input_passes_form_to_template(self):
         response = self.client.post('/lists/new', data={'text': ''})
         self.assertIsInstance(response.context['form'], ItemForm)
+
+
+class MyListsTest(TestCase):
+
+    def test_my_lists_url_renders_my_lists_templates(self):
+        response = self.client.get('/lists/users/a@b.com')
+        self.assertTemplateUsed(response, 'my_lists.html')
