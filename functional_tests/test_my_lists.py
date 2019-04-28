@@ -63,7 +63,7 @@ class MyListsTest(FunctionalTest):
         )
         self.browser.find_element_by_link_text('Click cows').click()
         self.wait_for(
-            lambda: self.assertEqual(self.browser.currrent_url, second_list_url)
+            lambda: self.assertEqual(self.browser.current_url, second_list_url)
         )
 
         # She logs out. The "My lists" option disappears
