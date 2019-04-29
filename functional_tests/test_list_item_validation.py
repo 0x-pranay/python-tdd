@@ -55,7 +55,7 @@ class ItemValidationTest(FunctionalTest):
     def test_cannot_add_duplication_item(self):
         # Edith goes on to home page and starts new list.
         self.browser.get(self.live_server_url)
-        self.add_item('Buy wellies')
+        self.add_list_item('Buy wellies')
 
         # She accidentally tries to enter a duplicate item
         self.get_item_input_box().send_keys('Buy wellies')
